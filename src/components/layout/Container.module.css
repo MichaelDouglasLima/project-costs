@@ -4,10 +4,11 @@
   justify-content: space-between;
   margin: 0 auto;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 .min-height {
-  min-height: 75vh;
+  min-height: 90vh;
 }
 
 .start {

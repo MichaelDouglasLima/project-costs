@@ -1,0 +1,21 @@
+.footer {
+  background-color: #222;
+  color: #FFF;
+  padding: 3em;
+  text-align: center;
+  height: 10vh;
+}
+
+.social_list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.social_list li {
+  margin: 0 1em;
+}
+
+.socila_list li:hover {
+  color: #FFBB33;
+}
