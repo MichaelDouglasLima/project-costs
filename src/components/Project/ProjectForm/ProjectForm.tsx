@@ -6,12 +6,15 @@ import SubmitButton from '../../form/SubmitButton/SubmitButton'
 import styles from './ProjectForm.module.css'
 
 interface IProjectForm {
-  btnText: string
+  btnText: string,
+  handleSubmit?: (project: object) => void,
+  projectData?: object
 }
 
-function ProjectForm({ btnText }: IProjectForm) {
+function ProjectForm({ btnText, handleSubmit, projectData }: IProjectForm) {
 
   const [categories, setCategories] = useState([])
+  const [project, setProject] = useState(projectData || {})
 
   useEffect(() => {
     fetch('http://localhost:5000/categories', {
@@ -25,8 +28,15 @@ function ProjectForm({ btnText }: IProjectForm) {
       .catch((error) => console.error('Error fetching categories:', error))
   }, [])
 
+  // const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   handleSubmit(project)
+  // }
+
+
+
   return (
-    <form className={styles.form}>
+    <form /*onSubmit={submit}*/ className={styles.form}>
 
       <Input
         type="text"
