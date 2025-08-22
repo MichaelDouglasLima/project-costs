@@ -5,8 +5,8 @@ export interface IInput {
   text: string
   name: string
   placeholder: string
-  handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  value: string
+  handleOnChange: React.ChangeEventHandler<HTMLInputElement>
+  value?: string | number
 }
 
 function Input({ type, text, name, placeholder, handleOnChange, value }: IInput) {

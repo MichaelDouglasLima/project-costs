@@ -7,8 +7,8 @@ import styles from './ProjectForm.module.css'
 
 interface IProjectForm {
   btnText: string,
-  handleSubmit?: (project: object) => void,
-  projectData?: object
+  handleSubmit?: any,
+  projectData?: any
 }
 
 function ProjectForm({ btnText, handleSubmit, projectData }: IProjectForm) {
@@ -28,23 +28,40 @@ function ProjectForm({ btnText, handleSubmit, projectData }: IProjectForm) {
       .catch((error) => console.error('Error fetching categories:', error))
   }, [])
 
-  // const submit = (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   handleSubmit(project)
-  // }
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    handleSubmit(project)
+  }
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+    setProject({
+      ...project,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  function handleCategory(e: React.ChangeEvent<HTMLSelectElement>) {
+    setProject({
+      ...project,
+      category: {
+        id: e.target.value,
+        name: e.target.options[e.target.selectedIndex].text
+      }
+    })
+  }
 
 
 
   return (
-    <form /*onSubmit={submit}*/ className={styles.form}>
+    <form onSubmit={submit} className={styles.form}>
 
       <Input
         type="text"
         text="Nome do projeto"
         name="project_name"
         placeholder="Insira o nome do projeto"
-        handleOnChange={() => { }}
-        value=""
+        handleOnChange={handleChange}
+        value={project.name}
       />
 
       <Input
@@ -52,16 +69,16 @@ function ProjectForm({ btnText, handleSubmit, projectData }: IProjectForm) {
         text="Orçamento do projeto"
         name="budget"
         placeholder="Insira o orçamento total"
-        handleOnChange={() => { }}
-        value=""
+        handleOnChange={handleChange}
+        value={project.budget}
       />
 
       <Select
         text="Selecione a categoria"
         name="category_id"
         options={categories}
-        handleOnChange={() => { }}
-        value=""
+        handleOnChange={handleCategory}
+        value={project.category ? project.category.id : ''}
       />
 
       <SubmitButton
