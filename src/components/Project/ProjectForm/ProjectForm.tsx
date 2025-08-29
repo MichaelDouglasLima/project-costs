@@ -31,6 +31,7 @@ function ProjectForm({ btnText, handleSubmit, projectData }: IProjectForm) {
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     handleSubmit(project)
+    // console.log(project)
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {

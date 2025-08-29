@@ -1,20 +1,32 @@
 {
-  "projects": [],
+  "projects": [
+    {
+      "id": "a602",
+      "project_name": "Projeto",
+      "budget": "1",
+      "category": {
+        "id": "1",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
+    }
+  ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Infra"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Desenvolvimento"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Design"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Planejamento"
     }
   ]
