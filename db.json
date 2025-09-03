@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "a602",
-      "project_name": "Projeto",
+      "name": "Projeto",
       "budget": "1",
       "category": {
         "id": "1",
@@ -12,17 +12,12 @@
       "services": []
     },
     {
-      "id": "f02e",
-      "cost": 0,
-      "services": []
-    },
-    {
       "id": "c125",
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "project_name": "Meu Projeto 3",
+      "name": "Meu Projeto 3",
       "budget": "15000",
       "cost": 0,
       "services": []

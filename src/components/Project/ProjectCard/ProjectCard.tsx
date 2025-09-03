@@ -5,15 +5,28 @@ interface IProjectCard {
   id: number
   name: string
   budget: number
-  category: {
-    name: string
-  }
+  category: string
   handleRemove(id: number): void
 }
 
-function ProjectCard({ id, name, budget, category, handleRemove }: IProjectCard) {
+function ProjectCard(props: any) {
   return (
+    <div className={styles.project_card}>
+      <h4>{props?.name}</h4>
 
+      <p>
+        <span> Orçamento:</span> R${props?.budget}
+      </p>
+
+      <p>
+        <span> Categoria:</span> {props?.category}
+      </p>
+
+      <div>
+        <p>Editar</p>
+        <p>Remover</p>
+      </div>
+    </div>
   )
 }
 
