@@ -1,5 +1,6 @@
 import styles from './ProjectCard.module.css'
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 interface IProjectCard {
   id: number
@@ -23,8 +24,13 @@ function ProjectCard(props: any) {
       </p>
 
       <div className={styles.project_card_actions}>
-        <p>Editar</p>
-        <p>Remover</p>
+        <Link to="/">
+          <BsPencil /> Editar
+        </Link>
+
+        <button>
+          <BsFillTrashFill onClick={() => props.handleRemove(props.id)} /> Excluir
+        </button>
       </div>
     </div>
   )
