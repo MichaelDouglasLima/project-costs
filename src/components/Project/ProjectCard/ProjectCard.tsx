@@ -18,11 +18,11 @@ function ProjectCard(props: any) {
         <span> Orçamento:</span> R${props?.budget}
       </p>
 
-      <p>
-        <span> Categoria:</span> {props?.category}
+      <p className={styles.category_text}>
+        <span className={`${styles[props?.category?.toLowerCase() || '']}`}> </span> {props?.category}
       </p>
 
-      <div>
+      <div className={styles.project_card_actions}>
         <p>Editar</p>
         <p>Remover</p>
       </div>
