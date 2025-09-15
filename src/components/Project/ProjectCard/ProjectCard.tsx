@@ -11,6 +11,11 @@ interface IProjectCard {
 }
 
 function ProjectCard(props: any) {
+  const remove = (e: any) => {
+    e?.preventDefault()
+    props?.handleRemove(props?.id)
+  }
+
   return (
     <div className={styles.project_card}>
       <h4>{props?.name}</h4>
@@ -28,7 +33,7 @@ function ProjectCard(props: any) {
           <BsPencil /> Editar
         </Link>
 
-        <button>
+        <button onClick={remove}>
           <BsFillTrashFill onClick={() => props.handleRemove(props.id)} /> Excluir
         </button>
       </div>
