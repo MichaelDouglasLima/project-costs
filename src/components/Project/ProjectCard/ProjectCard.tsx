@@ -29,7 +29,7 @@ function ProjectCard(props: any) {
       </p>
 
       <div className={styles.project_card_actions}>
-        <Link to="/">
+        <Link to={`/project/${props?.id}`}>
           <BsPencil /> Editar
         </Link>
 

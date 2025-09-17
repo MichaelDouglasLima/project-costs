@@ -58,6 +58,7 @@
   margin-top: 1.2em;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .project_card_actions a, 
@@ -74,6 +75,7 @@
   align-items: center;
   justify-content: center;
   transition: 0.5s;
+  margin-bottom: 0.5em;
 }
 
 .project_card_actions svg {
