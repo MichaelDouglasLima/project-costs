@@ -32,6 +32,24 @@
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "e158",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "name": "Projeto Atualizado",
+      "budget": "7000",
+      "cost": 600,
+      "services": [
+        {
+          "name": "Serviço Acessível",
+          "cost": "200",
+          "description": "Bom investimento",
+          "id": "21d73dc3-89e4-4e35-8099-f6956d71f0f9"
+        }
+      ]
     }
   ],
   "categories": [
